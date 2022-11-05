@@ -4,7 +4,7 @@
 
 The binary format for Microsoft Word 97 and later versions is based on a structure referred to as a .doc file or "compound file". 
 Compound File Binary format is documented at
-[WindowsCompoundBinaryFileFormatSpecification.pdf](http://download.microsoft.com/download/0/B/E/0BE8BDD7-E5E8-422A-ABFD-4342ED7AD8 86/WindowsCompoundBinaryFileFormatSpecification.pdf).
+[WindowsCompoundBinaryFileFormatSpecification.pdf](http://download.microsoft.com/download/0/B/E/0BE8BDD7-E5E8-422A-ABFD-4342ED7AD886/WindowsCompoundBinaryFileFormatSpecification.pdf).
 
 A Word .doc file consists of a:
 - Main stream
