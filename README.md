@@ -1,8 +1,18 @@
-# Windows Compound Binary File Format C library
+# Microsoft Office Word doc format C library
 
-### Overview
+### Word and .Doc Files
 
-A Compound File is made up of a number of virtual streams. These are collections of data that behave as a linear stream, although their on-disk format may be fragmented. Virtual streams can be user data, or they can be control structures used to maintain the file. Note that the file itself can also be considered a virtual stream.
-All allocations of space within a Compound File are done in units called sectors. The size of a sector is definable at creation time of a Compound File, but for the purposes of this document will be 512 bytes. A virtual stream is made up of a sequence of sectors.
-The Compound File uses several different types of sector: Fat, Directory, Minifat, DIF, and Storage. A separate type of 'sector' is a Header, the primary difference being that a Header is always 512 bytes long (regardless of the sector size of the rest of the file) and is always located at offset zero (0). With the exception of the header, sectors of any type can be placed anywhere within the file. The function of the various sector types is discussed below.
-In the discussion below, the term SECT is used to describe the location of a sector within a virtual stream (in most cases this virtual stream is the file itself). Internally, a SECT is represented as a ULONG.
+The binary format for Microsoft Word 97 and later versions is based on a structure referred to as a .doc file or ―compound file‖. Compound File Binary format is documented at
+[http://download.microsoft.com/download/0/B/E/0BE8BDD7-E5E8-422A-ABFD-4342ED7AD8 86/WindowsCompoundBinaryFileFormatSpecification.pdf].
+
+A Word .doc file consists of a:
+- Main stream
+- Summary information stream
+- Table stream
+- Data stream
+- Custom XML storage (Added in Word 2007)
+- 0 or more object streams which contain private data for OLE 2.0 objects embedded within the Word document
+
+The summary information stream is described in the Format of the Summary Info Stream
+in a Word File section.
+The object stream contains binary data for embedded objects. Word has no knowledge of the contents ofthis stream.
